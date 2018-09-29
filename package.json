@@ -1,0 +1,42 @@
+{
+  "name": "servers_temp",
+  "version": "1.0.0",
+  "description": "基于node koa mongodb swagger等后台模板",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "supervisor -i './node_modules' app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://guokangf@github.com/guokangf/serversTemp.git"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "mongodb",
+    "swagger"
+  ],
+  "author": "fgk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guokangf/serversTemp/issues"
+  },
+  "homepage": "https://github.com/guokangf/serversTemp#readme",
+  "dependencies": {
+    "jsonwebtoken": "^8.3.0",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^3.5.1",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.6",
+    "koa2-swagger-ui": "^2.9.8",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.2.18",
+    "supervisor": "^0.12.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-dev-middleware": "^3.4.0"
+  }
+}
