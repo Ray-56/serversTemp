@@ -1,5 +1,7 @@
 const user = require('../models/user');
 const _ = require('lodash');
+const path = require('path');
+const service = require('../service')
 
 
 class User {
@@ -56,6 +58,27 @@ class User {
             ctx.body = {
                 success: false,
                 message: '存在无法删除的'
+            };
+        } catch (err) {
+            ctx.throw(err)
+        }
+    }
+
+    async upload(ctx) {
+        try {
+            const rootPath = path.dirname(require.main.filename); // 根目录
+            const serverPath = path.join(rootPath, './public/uploads/'); // 本地存储文件目录
+
+            const result = await service.qn.uploadFile(ctx, {
+                fileType: 'images', // 文件名称
+                path: serverPath
+            });
+            const imgPath = path.join(serverPath, result.imgPath);
+            const qiniu = await service.qn.uptoQiniu(imgPath, result.imgKey);
+            const outUrl = 'http://pgf82afls.bkt.clouddn.com'; // http://xxxx(你的外链或者解析后的七牛的路径), 七牛生成的外链地址(一个月生命)
+            ctx.body = {
+                success: true,
+                imgUrl: `${outUrl}/${qiniu.key}`
             };
         } catch (err) {
             ctx.throw(err)

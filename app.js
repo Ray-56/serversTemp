@@ -51,4 +51,4 @@ routes.get('/', (ctx, next) => {
 
 app.use(routes.routes(), routes.allowedMethods());
 
-app.listen(3333)
+app.listen(3333, '0.0.0.0')

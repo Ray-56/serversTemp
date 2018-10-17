@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/guokangf/serversTemp#readme",
   "dependencies": {
+    "busboy": "^0.2.14",
     "jsonwebtoken": "^8.3.0",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
@@ -33,6 +34,7 @@
     "koa2-swagger-ui": "^2.9.8",
     "lodash": "^4.17.11",
     "mongoose": "^5.2.18",
+    "qiniu": "^7.2.1",
     "supervisor": "^0.12.0"
   },
   "devDependencies": {

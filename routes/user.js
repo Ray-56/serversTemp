@@ -16,4 +16,6 @@ router.post('/update', userController.update);
 
 router.post('/delete', userController.delete);
 
+router.post('/upload', userController.upload)
+
 module.exports = router;
